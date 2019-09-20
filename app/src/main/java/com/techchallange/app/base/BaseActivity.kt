@@ -28,6 +28,9 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseView
     @LayoutRes
     protected abstract fun getLayoutRes(): Int
 
+    protected abstract fun onCreateFinished()
+
+
     override fun getContext(): Context {
         return this
     }
@@ -45,6 +48,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseView
 
         binding = DataBindingUtil.setContentView(this, getLayoutRes())
 
+        onCreateFinished()
         showHideLoading()
         showError()
     }

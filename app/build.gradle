@@ -6,14 +6,15 @@ apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
 
+def configuration = rootProject.ext.configuration
+def libraries = rootProject.ext.libraries
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.0"
+    compileSdkVersion configuration.compileSdkVersion
     defaultConfig {
-        applicationId "com.techchallange.app"
-        minSdkVersion 19
-        targetSdkVersion 29
+        applicationId configuration.package
+        minSdkVersion configuration.minSdkVersion
+        targetSdkVersion configuration.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -55,21 +56,18 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "androidx.appcompat:appcompat:$appcompat"
-    implementation "androidx.core:core-ktx:$core_kotlin_extensions"
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.2.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$libraries.kotlin_version"
+    implementation "androidx.appcompat:appcompat:$libraries.appcompat"
+    implementation "androidx.core:core-ktx:$libraries.core_kotlin_extensions"
+    implementation "androidx.appcompat:appcompat:$libraries.appcompat"
 
 
     // Koin for Android
-    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android:$libraries.koin_version"
     // Koin Android Scope feature
-    implementation "org.koin:koin-android-scope:$koin_version"
+    implementation "org.koin:koin-android-scope:$libraries.koin_version"
     // Koin Android ViewModel feature
-    implementation "org.koin:koin-android-viewmodel:$koin_version"
-
+    implementation "org.koin:koin-android-viewmodel:$libraries.koin_version"
 
 
     // Data binding
@@ -77,15 +75,19 @@ dependencies {
 
 
     //Rx
-    implementation "io.reactivex.rxjava2:rxjava:$rx_java"
-    implementation "io.reactivex.rxjava2:rxandroid:$rx_android"
+    implementation "io.reactivex.rxjava2:rxjava:$libraries.rx_java"
+    implementation "io.reactivex.rxjava2:rxandroid:$libraries.rx_android"
 
     //Retrofit 2
-    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
-    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_interceptor"
+    implementation "com.squareup.retrofit2:retrofit:$libraries.retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$libraries.retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$libraries.retrofit_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$libraries.okhttp_interceptor"
 
-    implementation "androidx.recyclerview:recyclerview:$recyclerview"
+    implementation "androidx.recyclerview:recyclerview:$libraries.recyclerview"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
 }

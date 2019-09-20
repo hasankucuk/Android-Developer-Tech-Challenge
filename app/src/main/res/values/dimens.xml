@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="unit_24_sp">24sp</dimen>
+    <dimen name="unit_34_sp">34sp</dimen>
+
+    <dimen name="unit_1_dp">1dp</dimen>
+    <dimen name="unit_2_dp">2dp</dimen>
+    <dimen name="unit_5_dp">5dp</dimen>
+    <dimen name="unit_20_dp">20dp</dimen>
+    <dimen name="unit_10_dp">10dp</dimen>
+    <dimen name="unit_30_dp">30dp</dimen>
+</resources>

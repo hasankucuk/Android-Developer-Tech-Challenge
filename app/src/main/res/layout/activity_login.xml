@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activities.login.LoginActivity">
+
+
+        <TextView
+            style="@style/App.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="?attr/actionBarSize"
+            android:text="@string/login_title"
+            android:textAlignment="center" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edt_username"
+                    style="@style/App.Login.Edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_person"
+                    android:hint="@string/login_edittext_hint_username"
+                    android:imeOptions="actionNext"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/edt_password"
+                    style="@style/App.Login.Edittext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_10_dp"
+                    android:drawableStart="@drawable/ic_lock"
+                    android:hint="@string/login_edittext_hint_password"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_10_dp"
+                    android:layout_marginStart="@dimen/unit_20_dp"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/rememberMeSwitch"
+                        android:layout_marginEnd="@dimen/unit_10_dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="@string/login_textview_text_remember_me"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <Button
+                    android:layout_marginTop="@dimen/unit_30_dp"
+                    style="@style/App.Red.Button"
+                    android:text="@string/login_button_text_enter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>

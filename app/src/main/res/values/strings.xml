@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Android Developer Tech Challenge</string>
+    <string name="login_title">MARKETİM</string>
+    <string name="login_edittext_hint_username">Kullanıcı Adı</string>
+    <string name="login_edittext_hint_password">Şifre</string>
+    <string name="login_textview_text_remember_me">Beni Hatırla</string>
+    <string name="login_button_text_enter">GİRİŞ</string>
 </resources>

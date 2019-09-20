@@ -3,4 +3,12 @@
     <color name="colorPrimary">#ed2939</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="titleColorRed">#E53935</color>
+    <color name="editTextBgColor">#afafaf</color>
+    <color name="editTextHintColor">#a9a9a9</color>
+    <color name="redButtonBgColor">#ed2939</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
 </resources>
