@@ -1,5 +1,22 @@
 # Android Developer Tech Challenge
 
+Kariyer.net Android Developer Tech Challenge Uygulama Ödevi
+
+
+# Tech Stacks
+
+- **MVVM**
+- **Koin**
+: Koin is a Dependency injection Framework for Android.
+- **RxJava**
+: RxJava is a Reactive Programming library. Reactive Programming is event based programming.
+- **Preference Manager**
+
+- **Data Binding**
+: The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically.
+- **Retrofit2**
+: Retrofit is a REST Client for Android.
+
 
 
 
