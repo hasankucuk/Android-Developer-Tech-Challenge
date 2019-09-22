@@ -13,6 +13,4 @@
     <dimen name="unit_30_dp">30dp</dimen>
     <dimen name="unit_3_dp">3dp</dimen>
     <dimen name="unit_24_dp">24dp</dimen>
-    <dimen name="unit_14_dp">14dp</dimen>
-    <dimen name="unit_16_dp">16dp</dimen>
 </resources>

@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#ed2939</color>
-    <color name="colorPrimaryDark">#ed2939</color>
-    <color name="colorAccent">#ed2939</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
 
     <color name="titleColorRed">#E53935</color>
     <color name="editTextBgColor">#afafaf</color>
     <color name="editTextHintColor">#a9a9a9</color>
     <color name="redButtonBgColor">#ed2939</color>
-    <color name="redButtonBgColorPressed">#aaed2939</color>
 
     <color name="successTextColor">#4CAF50</color>
     <color name="pendingTextColor">#E53935</color>

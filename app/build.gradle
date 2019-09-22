@@ -62,6 +62,9 @@ dependencies {
     implementation "androidx.appcompat:appcompat:$libraries.appcompat"
 
 
+    //Preference Maganger
+    implementation "androidx.preference:preference-ktx:$libraries.preference_manager"
+
     // Koin for Android
     implementation "org.koin:koin-android:$libraries.koin_version"
     // Koin Android Scope feature
@@ -85,6 +88,8 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$libraries.okhttp_interceptor"
 
     implementation "androidx.recyclerview:recyclerview:$libraries.recyclerview"
+
+    implementation project(":market_state_textview")
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'

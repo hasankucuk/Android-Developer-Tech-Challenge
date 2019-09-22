@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.techchallange.app.ui.activities.market.MarketRecyclerItemViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/unit_20_dp"
+        android:paddingBottom="@dimen/unit_30_dp"
+        tools:ignore="all">
+
+        <LinearLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:importantForAccessibility="yes"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/unit_10_dp">
+
+                <TextView
+                    android:id="@+id/tv_day"
+                    style="@style/App.TextView.Day"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="@{String.format(@string/Generic_Text,viewModel.data.date)}"
+                    tools:text="08" />
+
+                <TextView
+                    android:id="@+id/tv_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:textColor="#232323"
+                    app:bindServerDate="@{viewModel.data.month}"
+                    tools:text="Ekim" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/unit_5_dp"
+                android:layout_marginRight="@dimen/unit_10_dp"
+                android:background="#40000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_5_dp"
+                    android:layout_marginRight="@dimen/unit_14_dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/iv_arrow"
+                        android:layout_width="@dimen/unit_16_dp"
+                        android:layout_height="@dimen/unit_16_dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/ic_right_arrow" />
+
+                    <TextView
+                        android:id="@+id/tv_market_name"
+                        style="@style/App.TextView.Market.Title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/unit_5_dp"
+                        android:layout_toLeftOf="@id/iv_arrow"
+                        android:text="@{viewModel.data.marketName}"
+                        tools:text="Market 1" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_10_dp"
+                    android:layout_marginRight="@dimen/unit_10_dp">
+
+                    <TextView
+                        android:id="@+id/tv_price"
+                        style="@style/App.TextView.Market.Price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="@{String.format(@string/Generic_Text, viewModel.data.productPrice)}"
+                        tools:text="25 TL" />
+
+                    <TextView
+                        android:id="@+id/tv_order_name"
+                        style="@style/App.TextView.Market.Detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/unit_5_dp"
+                        android:layout_toLeftOf="@id/tv_price"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text="@{viewModel.data.orderName}"
+                        tools:text="Şampuan 250 ml" />
+
+                </RelativeLayout>
+
+
+                <com.techchallange.market_state_textview.MarketStateTextView
+                    android:id="@+id/tv_state_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/unit_10_dp"
+                    android:layout_marginBottom="@dimen/unit_5_dp"
+                    android:text="@{viewModel.data.productState}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:id="@+id/linear_order_status_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/unit_20_dp"
+            android:background="#20000000"
+            android:orientation="vertical"
+            android:padding="@dimen/unit_10_dp"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp">
+
+                <TextView
+                    android:id="@+id/tv_price_detail"
+                    style="@style/App.TextView.Market.Price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="@{String.format(@string/Generic_Text, viewModel.data.productDetail.summaryPrice)}"
+                    tools:text="25 TL" />
+
+                <TextView
+                    android:id="@+id/productDetailsTextView"
+                    style="@style/App.TextView.Market.Detail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/unit_5_dp"
+                    android:layout_toLeftOf="@id/tv_price_detail"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{viewModel.data.productDetail.orderDetail}"
+
+                    tools:text="Şampuan 250 ml" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="@dimen/unit_5_dp"
+                android:background="#40000000" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

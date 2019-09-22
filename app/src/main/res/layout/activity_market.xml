@@ -5,16 +5,81 @@
 
     <data>
 
+
         <variable
             name="viewModel"
             type="com.techchallange.app.base.BaseViewModel" />
+
+        <variable
+            name="adapter"
+            type="com.techchallange.app.base.BaseRecyclerAdapter" />
+
+        <variable
+            name="layoutManager"
+            type="androidx.recyclerview.widget.LinearLayoutManager" />
     </data>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         tools:context=".ui.activities.market.MarketActivity">
 
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:id="@+id/toolbar"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:minHeight="?attr/actionBarSize">
+
+            <TextView
+                style="@style/App.TextView.Market.Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/login_title" />
+
+        </androidx.appcompat.widget.Toolbar>
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_below="@id/toolbar"
+            android:layout_height="match_parent"
+            app:adapter="@{adapter}"
+            app:layoutManager="@{layoutManager}" />
+
+        <LinearLayout
+            android:id="@+id/linear_bottom"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="@dimen/unit_10_dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="?attr/actionBarSize"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/btn_my_order"
+                android:layout_width="0dp"
+                style="@style/App.Red.Outlined.Button"
+                android:text="@string/button_my_orderd"
+                android:layout_weight="50"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:layout_width="0dp"
+                android:id="@+id/btn_logout"
+                style="@style/App.Red.Button"
+                android:text="@string/button_log_out"
+                android:layout_weight="50"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
 
     </RelativeLayout>
 </layout>

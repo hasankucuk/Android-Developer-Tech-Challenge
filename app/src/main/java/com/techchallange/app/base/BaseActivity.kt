@@ -2,12 +2,15 @@ package com.techchallange.app.base
 
 import android.content.Context
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
+import com.techchallange.app.util.NavigationHelper
+import com.techchallange.app.util.PreferencesHelper
 
 /**
  * This class is base activity class.
@@ -30,17 +33,22 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseView
 
     protected abstract fun onCreateFinished()
 
+    protected open fun getProgressView(): View? {
+        return null
+    }
+
 
     override fun getContext(): Context {
         return this
     }
 
     override fun showLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        getProgressView()?.let { it.visibility = View.VISIBLE }
     }
 
+
     override fun hideLoading() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        getProgressView()?.let { it.visibility = View.GONE }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,6 +73,14 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : BaseView
 
             if (it!!) showLoading() else hideLoading()
         })
+    }
+
+    protected fun getNavigationHelper(): NavigationHelper {
+        return NavigationHelper.getInstance()
+    }
+
+    protected fun getPreferencesHelper(): PreferencesHelper {
+        return PreferencesHelper.getInstance(this)
     }
 
 

@@ -1,6 +1,7 @@
 package com.techchallange.app.model
 
 import com.google.gson.annotations.SerializedName
+import com.techchallange.app.base.BaseModel
 
 data class ProductData(
     @SerializedName("date") val date: String,
@@ -10,4 +11,4 @@ data class ProductData(
     @SerializedName("productPrice") val productPrice: Double,
     @SerializedName("productState") val productState: String,
     @SerializedName("productDetail") val productDetail: ProductDetailData
-)
+) : BaseModel()

@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':market_state_textview'
 rootProject.name='Android Developer Tech Challenge'

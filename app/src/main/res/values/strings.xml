@@ -5,4 +5,13 @@
     <string name="login_edittext_hint_password">Şifre</string>
     <string name="login_textview_text_remember_me">Beni Hatırla</string>
     <string name="login_button_text_enter">GİRİŞ</string>
+    <string name="error_login_pw_or_username_empty">Kullanıcı adı veya şifre boş olmamalıdır.</string>
+    <string name="error_login_pw_or_username">Kullanıcı adı veye şifre yanlış.</string>
+    <string name="Generic_Text">%s</string>
+    <string name="button_my_orderd">Siparişlerim</string>
+    <string name="button_log_out">Çıkış Yap</string>
+    <string name="market_alert_dialog_title">Çıkış</string>
+    <string name="market_alert_dialog_desc">Çıkış yapmak istediğinize emin misiniz?</string>
+    <string name="market_alert_positive_button">İstiyorum</string>
+    <string name="market_alert_negative_button">İptal et</string>
 </resources>
